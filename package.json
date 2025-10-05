@@ -1,0 +1,25 @@
+{
+  "name": "vendorforge-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "api": "node server/index.js",
+    "dev:all": "run-p api dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.474.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "npm-run-all": "^4.1.5"
+  }
+}

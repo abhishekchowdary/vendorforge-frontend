@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html, body, #root {
+    height: 100%;
+  }
+}
+
+/* Dark-friendly native form controls */
+select, input, textarea {
+  color-scheme: dark;
+  background-color: #0f0d1a;
+  color: #e5e7eb;                 /* gray-200 */
+  border-color: rgba(255,255,255,0.1);
+}
+select:focus, input:focus, textarea:focus {
+  outline: none;
+  border-color: #5a18af;          /* brand-700 */
+  box-shadow: 0 0 0 2px rgba(90,24,175,0.35);
+}
+select option {
+  background-color: #0f0d1a;
+  color: #e5e7eb;
+}
+
+/* Make monochrome SVG symbols visible on dark */
+svg { color: #e5e7eb; }           /* currentColor used by many symbols */
+svg use, svg path { color: inherit; }
+
+/* Optional: subtle inner glow for depth */
+.card { box-shadow: 0 8px 24px rgba(130, 60, 255, 0.15), inset 0 1px 0 rgba(255,255,255,0.02); }
+
+@layer components {
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .card {
+    @apply bg-[#111019] rounded-2xl border border-white/5 shadow-card;
+  }
+  .btn {
+    @apply inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white;
+  }
+  .nav-link {
+    @apply text-gray-300 hover:text-white transition-colors;
+  }
+  .nav-link-active {
+    @apply text-white;
+  }
+}
